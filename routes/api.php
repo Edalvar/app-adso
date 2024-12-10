@@ -26,11 +26,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/peliculas/datos',[PeliculaController::class,'getData']);
+Route::get('/peliculas/datosById',[PeliculaController::class,'getDataById']);
 Route::post('/peliculas/save',[PeliculaController::class,'save']);
 Route::put('/peliculas/update',[PeliculaController::class,'update']);
 Route::delete('/peliculas/delete',[PeliculaController::class,'delete']);
 
 Route::get('/series/datos',[SerieController::class,'getData']);
+Route::get('/series/datosById',[SerieController::class,'getDataById']);
 Route::post('/series/save',[SerieController::class,'save']);
 Route::put('/series/update',[SerieController::class,'update']);
 Route::delete('/series/delete',[SerieController::class,'delete']);

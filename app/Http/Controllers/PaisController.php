@@ -3,25 +3,40 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pais;
 
 class PaisController extends Controller
 {
     //
     public function getData(Request $request){
 
-        $rta= 10+20;
+        
+        $pais=Pais::all();
         return response()->json([
             'status'=> '200',
             'message'=> 'guardado con exito',
-            'result'=> $rta
+            'result'=> $pais
         ]);
     }
 
     public function save(Request $request){
+
+        //instanciamos el objeto
+
+        $pais= Pais:: create([
+            "nombre"=>$request->nombre,
+        ]);    
+
+/*
+        $pais= new Pais();
+        $pais->nombre= $request-> nombre;
+        $pais->save(); 
+*/
+
         return response()->json([
             'status'=> '200',
             'message'=> 'guardado con exito',
-            'data'=> $request->titulo,
+            
         ]);
     }
 

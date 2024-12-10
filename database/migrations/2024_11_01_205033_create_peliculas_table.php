@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('titulo');            // Título de la película
             $table->string('genero');             // Género de la película
             $table->string('director');           // Director de la película
-            $table->year('año');                  // Año de lanzamiento (campo tipo año)
+            $table->integer('año');                  // Año de lanzamiento (campo tipo año)
             $table->integer('duracion');          // Duración en minutos
-            $table->text('sinopsis');             // Sinopsis o descripción de la película
+            $table->string('sinopsis');             // Sinopsis o descripción de la película
             $table->string('clasificacion');      // Clasificación de la película (e.g., PG, R, etc.)
             $table->string('idioma');             // Idioma principal de la película
-            $table->boolean('subtitulos');        // Indica si tiene subtítulos (1 para sí, 0 para no)
+            $table->string('subtitulos');        // Indica si tiene subtítulos (1 para sí, 0 para no)
             $table->string('imagen_portada');     // URL o path de la imagen de portada
             $table->unsignedBigInteger('id_pais');
             $table->foreign('id_pais')->references('id')->on('pais');
